@@ -1,3 +1,20 @@
+header, #navCont
+{
+	background: rgba(42,16,140,1);
+}
+#navbar-brand 
+{
+	color:white;
+}
+#navbar-brand:hover 
+{
+	color:white;
+}
+#nula:hover 
+{
+	color:white;
+}
+
 #hCont
 {
 	height: 100%;
@@ -38,6 +55,18 @@
 }
 #imgA img
 {
-	width: 100%;
+	width: 99.6%;
 	max-height: 150px;
+}
+
+footer
+{
+	color: white;
+	background: rgba(30,30,30,1);
+	height: 200px;
+}
+
+#fDiv
+{
+	width: 25%;
 }
