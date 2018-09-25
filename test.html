@@ -16,14 +16,14 @@
 <body ng-app="app" ng-controller="homeController" ng-init="varTest=0">
 <header>
     <nav class="navbar navbar-default">
-        <div class="container">
+        <div id="navCont" class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">DClearning</a>
+                <a class="navbar-brand" id="navbar-brand" href="/">DClearning</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/!"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#!about"><i class="fa fa-shield"></i> About</a></li>
-                <li><a href="#!contact"><i class="fa fa-comment"></i> Contact</a></li>
+                <li><a id="nula" href="#/!"><i class="fa fa-home"></i> Home</a></li>
+                <li><a id="nula" href="#!about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a id="nula" href="#!contact"><i class="fa fa-comment"></i> Contact</a></li>
 </ul> </div>
     </nav>
 </header>
@@ -54,11 +54,7 @@
   </form>
   </div>
   </div>
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> defebf6ee73fbc7f0e666fbee6e6f4dc8ef5f4d2
   <div id="bCont" class="container" style="word-wrap:break-word;">
       <div class="row">
           <div id="mineB" class="col-sm-1">
@@ -79,6 +75,28 @@
         </div>
   </div>
 </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div id="fDiv" class="col-sm-1">
+        <h4>News</h4>
+        <p>Tell something here</p>
+      </div>
+      <div id="fDiv" class="col-sm-1">
+        <h4>Mannual</h4>
+        <p>Tell something here</p>
+      </div>
+      <div id="fDiv" class="col-sm-1">
+        <h4>Entreprise</h4>
+        <p>Tell something here</p>
+      </div>
+      <div id="fDiv" class="col-sm-1">
+        <h4>Workers</h4>
+        <p>Tell something here</p>
+      </div>
+    </div>
+    </div>
+</footer>
 <script>
 var app = angular.module('app', ['ngRoute']);
    app.config(function ($routeProvider) {
