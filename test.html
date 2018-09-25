@@ -2,10 +2,15 @@
 <html>
 <head>
 <title>Angular by daniel</title>
-<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css"/> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css"/><link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="bootstrap-3.3.7/font-awesome-4.1.0/css/font-awesome.css"/>
 <script src="angular-1.7.2/angular.min.js"></script>
 <script src="angular-1.7.2/angular-route.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 
 </head>
 <body ng-app="app" ng-controller="homeController">
@@ -24,8 +29,26 @@
 </header>
   <div id="main">
 <!-- this is where content will be injected --> 
-  <div ng-view></div>
-  <p>{{'Hello!'}}</p>
+  <div id="hCont" ng-view></div>
+  <div id="bCont" class="container" style="word-wrap:break-word;">
+      <div class="row">
+          <div id="mineB" class="col-sm-1">
+            <div id="imgA"><img src="images/img1.jpeg"></div></br>
+            <h3>Discover a new way of learning</h3>
+            <p id="p1">Lorem ipsum dolor..Lorem ipsum dolor..Lorem ipsum dolor..</p>
+          </div>
+          <div id="mineB" class="col-sm-1">
+            <div id="imgA"><img src="images/img2.jpeg"></div></br>
+            <h3>Learn where are you</h3>
+            <p id="p1">Lorem ipsum dolor..Lorem ipsum dolor..Lorem ipsum dolor..Lorem ipsum dolor..</p>
+          </div>
+          <div id="mineB" class="col-sm-1">
+            <div id="imgA"><img src="images/img3.jpeg"></div></br>
+            <h3>Stay connected with your teachers constanly</h3>
+            <p id="p1">Lorem ipsum dolor..Lorem ipsum dolor..</p>
+          </div>
+        </div>
+  </div>
 </div>
 
 <script>
@@ -38,12 +61,12 @@ var app = angular.module('app', ['ngRoute']);
           templateUrl: 'pages/home.html',
           controller: 'homeController'
         })
-      .when(' pages/about', {
+      .when('/about', {
   // route for the about page
           templateUrl: 'pages/about.html',
           controller: 'aboutController'
         })
-      .when('pages/contact/', {
+      .when('/contact', {
   // route for the contact page
           templateUrl: 'pages/contact.html',
           controller: 'contactController'
@@ -66,7 +89,6 @@ var app = angular.module('app', ['ngRoute']);
   app.controller('contactController', function ($scope) {
       $scope.message = 'Contact us!';
   });
-
   app.controller('notFoundController', function ($scope) {
       $scope.message = 'There seems to be a problem finding the page you wanted';
       $scope.attemptedPath = $location.path();
