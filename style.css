@@ -1,6 +1,15 @@
+body, #main
+{
+	height: 100%;
+}
 header, #navCont
 {
 	background: rgba(42,16,140,1);
+}
+#smain
+{
+	background: white;
+	min-height: 100%;
 }
 #navbar-brand 
 {
@@ -16,10 +25,14 @@ header, #navCont
 	color:white;
 }
 
-#hCont
+#hCont, #main
 {
 	height: 100%;
 	width: 100%;
+}
+#form
+{
+	margin: 5% 0 0 10%;
 }
 #bCont
 {
@@ -28,7 +41,15 @@ header, #navCont
 	background: rgba(200,200,200,0.3);
 	padding: 2% 0 2% 0;
 }
-
+#btnS
+{
+	background: rgba(52,20,182,1);
+	color:white;
+}
+#btnS:hover
+{
+	
+}
 #mineB
 {
 	padding:10px;
