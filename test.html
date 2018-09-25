@@ -1,52 +1,24 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
 <title>Angular by daniel</title>
-<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"/> 
-<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/font-awesome.css"/>
+<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css"/> 
+<link rel="stylesheet" href="bootstrap-3.3.7/font-awesome-4.1.0/css/font-awesome.css"/>
 <script src="angular-1.7.2/angular.min.js"></script>
 <script src="angular-1.7.2/angular-route.js"></script>
-<script>
-var app = angular.module('app', ['ngRoute']);
-	 app.config(function ($routeProvider) {
-            // configure the routes
-            $routeProvider
-			.when('/', {
-  // route for the home page
-			    templateUrl: 'pages/home.html',
-    			controller: 'homeController'
-			});
-	});
-	
-	app.controller('homeController', function ($scope) {
-    	$scope.message = 'Welcome to my home page!';
-	});
-	
-	app.controller('aboutController', function ($scope) {
-    	$scope.message = 'Find out more about me.';
-	});
-	
-	app.controller('contactController', function ($scope) {
-    	$scope.message = 'Contact us!';
-	});
 
-	app.controller('notFoundController', function ($scope) {
-		$scope.message = 'There seems to be a problem finding the page you wanted';
-        $scope.attemptedPath = $location.path();
-    });
-   </script>
 </head>
-<body ng-controller="homeController">
+<body ng-app="app" ng-controller="homeController">
 <header>
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">My Website</a>
+                <a class="navbar-brand" href="/">DClearning</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                <li><a href="#/!"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#!about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="#!contact"><i class="fa fa-comment"></i> Contact</a></li>
 </ul> </div>
     </nav>
 </header>
@@ -55,5 +27,50 @@ var app = angular.module('app', ['ngRoute']);
   <div ng-view></div>
   <p>{{'Hello!'}}</p>
 </div>
+
+<script>
+var app = angular.module('app', ['ngRoute']);
+   app.config(function ($routeProvider) {
+            // configure the routes
+            $routeProvider
+      .when('/', {
+  // route for the home page
+          templateUrl: 'pages/home.html',
+          controller: 'homeController'
+        })
+      .when(' pages/about', {
+  // route for the about page
+          templateUrl: 'pages/about.html',
+          controller: 'aboutController'
+        })
+      .when('pages/contact/', {
+  // route for the contact page
+          templateUrl: 'pages/contact.html',
+          controller: 'contactController'
+        })
+      .otherwise({
+  // when all else fails
+          templateUrl: 'pages/routeNotFound.html',
+          controller: 'notFoundController'
+      });
+  });
+  
+  app.controller('homeController', function ($scope) {
+      $scope.message = 'Welcome to my home page!';
+  });
+  
+  app.controller('aboutController', function ($scope) {
+      $scope.message = 'Find out more about me.';
+  });
+  
+  app.controller('contactController', function ($scope) {
+      $scope.message = 'Contact us!';
+  });
+
+  app.controller('notFoundController', function ($scope) {
+      $scope.message = 'There seems to be a problem finding the page you wanted';
+      $scope.attemptedPath = $location.path();
+  });
+   </script>
 </body>
 </html>
