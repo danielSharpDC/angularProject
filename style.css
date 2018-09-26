@@ -25,14 +25,69 @@ header, #navCont
 	color:white;
 }
 
-#hCont, #main
+#hCont h1, #main
 {
 	height: 100%;
 	width: 100%;
+	text-align:center;
 }
-#form
+@media (min-width: 1000px) {
+form
 {
-	margin: 5% 0 0 10%;
+	margin: 0 0 0 15%;
+}
+
+.slogan
+{
+	animation:4s slid;
+	padding:-20px 10px 10px 10px;
+	width: 25%;
+	height: 130px;
+	display:block;
+	position:absolute;
+	background: white;
+	text-align:center;
+	margin: -15% 0 0 1%;
+	border:1px solid rgba(150,150,150,0.5);
+	border-radius: 5px;
+}
+.slogan h4
+{
+	animation:7s slide;
+	}
+.slogan h3
+{
+	animation:4s slide1;
+	}
+.slogan:hover
+{
+	box-shadow:4px 4px 5px rgba(150,150,150,0.5);
+}
+@keyframes slid{
+	from{
+		margin-left:-50%;
+	}
+	to{
+		margin-left:1%;
+	}
+}
+@keyframes slide{
+	from{
+		margin-left:-550%;
+	}
+	to{
+		margin-left:0;
+	}
+}
+@keyframes slide1{
+	from{
+		margin-left:-450%;
+	}
+	to{
+		margin-left:0;
+	}
+}
+
 }
 #bCont
 {
@@ -41,19 +96,12 @@ header, #navCont
 	background: rgba(200,200,200,0.3);
 	padding: 2% 0 2% 0;
 }
-#btnS
-{
-	background: rgba(52,20,182,1);
-	color:white;
-}
-#btnS:hover
-{
-	
-}
+
 #mineB
 {
 	padding:10px;
 	width: 30%;
+	display:inline-block;
 	height: 400px;
 	background: white;
 	margin: 0 0 0 2.4%;

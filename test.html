@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Angular by daniel</title>
+<title>DC Learning</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css"/><link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.css"/>
+<link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="bootstrap-3.3.7/font-awesome-4.1.0/css/font-awesome.css"/>
 <script src="angular-1.7.2/angular.min.js"></script>
 <script src="angular-1.7.2/angular-route.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
-
 </head>
 <body ng-app="app" ng-controller="homeController" ng-init="varTest=0">
 <header  ng-show="varTest<1">
@@ -29,21 +29,12 @@
 </header>
   <div id="main"  ng-show="varTest<1">
 <!-- this is where content will be injected --> 
-  <div id="hCont" ng-view ng-show="varTest>0"></div>
+  <div ng-view ng-show="varTest>0"></div>
 
 <!-- formulaire -->
-<<<<<<< HEAD
-  <div id="hCont">
-  <form class="form-horizontal" name="form">
-=======
-<div id="smain" class="jumbotron text-center">
-  <h1>
-Learn from an account</h1>
   <div id="hCont" ng-show="varTest<1">
-
-  <form class="form-horizontal" name="form" action="dashboard.html" id="form">
-
->>>>>>> c5bdf472e0f9fe5cb2ac592cc0cdb0e12d5fd5ae
+  <h1>Learn from an account</h1>
+  <form class="form-horizontal" name="form">
   <div class="form-group">
   <label class="col-md-3 control-label" for="Pseudo">User Name</label>
   <div class="col-md-4">
@@ -59,25 +50,18 @@ Learn from an account</h1>
   <font color="red" ng-show="form.mdp.$touched && form.mdp.$invalid"> The password must contain at least 5 characters</font>
   </div>
   <div class="form-group">
-  <div class="col-md-offset-3 col-md-9">
-<<<<<<< HEAD
-  <button class="btn btn-detton-default" style="color:#c0c0c0" ng-if="form.pseudo.$dirty && form.pseudo.$invalid || form.mdp.$dirty && form.mdp.$invalid ||form.mdp.$untouched || form.pseudo.$untouched || form.mdp.$touched && form.mdp.$invalid || form.mdp.$invalid && form.pseudo.$touched && form.pseudo.$invalid">Sign In</button>
-  <input class="btn btn-detton-default" ng-click="varTest=2" style="color:white;background-color:rgba(42,16,140,1)" ng-show="form.mdp.$touched && form.mdp.$valid && form.pseudo.$touched && form.pseudo.$valid" type="submit" value="Sign In"/>
+  <div class="col-md-offset-1 col-md-5">
+  <button class="btn btn-detton-default" style="color:#c0c0c0" ng-if="form.pseudo.$dirty && form.pseudo.$invalid || form.mdp.$dirty && form.mdp.$invalid ||form.mdp.$untouched || form.pseudo.$untouched || form.mdp.$touched && form.mdp.$invalid || form.mdp.$invalid && form.pseudo.$touched && form.pseudo.$invalid"><i class="fa fa-sign-in"></i> Sign In</button>
+  <button class="btn btn-detton-default" ng-click="varTest=2" style="color:white;background-color:rgba(42,16,140,1)" ng-show="form.mdp.$touched && form.mdp.$valid && form.pseudo.$touched && form.pseudo.$valid"><i class="fa fa-sign-in"></i> Sign In</button>
   </div>
   </div>
   </form>
-=======
-
-  <input class="btn btn-detton-default" type="submit" value="valider"/>
-
-  <input class="btn btn-detton-default" type="submit" value="Sign Up" ng-click="varTest=2" id="btnS"/>
-  </div>
   </div>
   </form>
-    <h3>
-Appointment of the learner</h3>
+  <div class="slogan">
+    <h3>Appointment of the learner</h3>
     <h4>DClearning, Your system in line with your studies</h4>
->>>>>>> c5bdf472e0f9fe5cb2ac592cc0cdb0e12d5fd5ae
+  </div>
   </div>
   </div>
 
