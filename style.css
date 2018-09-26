@@ -1,4 +1,4 @@
-body, #main
+body
 {
 	height: 100%;
 }
@@ -32,45 +32,25 @@ header, #navCont
 	text-align:center;
 }
 @media (min-width: 1000px) {
+	h1{font-size:5em;margin-bottom:2%;margin-top:7%;}
+#main
+{
+}
 form
 {
 	margin: 0 0 0 15%;
 }
 
-.slogan
-{
-	animation:4s slid;
-	padding:-20px 10px 10px 10px;
-	width: 25%;
-	height: 130px;
-	display:block;
-	position:absolute;
-	background: white;
-	text-align:center;
-	margin: -15% 0 0 1%;
-	border:1px solid rgba(150,150,150,0.5);
-	border-radius: 5px;
-}
 .slogan h4
 {
 	animation:7s slide;
+	margin-bottom:15%;
 	}
 .slogan h3
 {
 	animation:4s slide1;
 	}
-.slogan:hover
-{
-	box-shadow:4px 4px 5px rgba(150,150,150,0.5);
-}
-@keyframes slid{
-	from{
-		margin-left:-50%;
-	}
-	to{
-		margin-left:1%;
-	}
-}
+
 @keyframes slide{
 	from{
 		margin-left:-550%;
@@ -81,7 +61,7 @@ form
 }
 @keyframes slide1{
 	from{
-		margin-left:-450%;
+		margin-left:450%;
 	}
 	to{
 		margin-left:0;
