@@ -14,7 +14,7 @@
 
 </head>
 <body ng-app="app" ng-controller="homeController" ng-init="varTest=0">
-<header>
+<header  ng-show="varTest<1">
     <nav class="navbar navbar-default">
         <div id="navCont" class="container">
             <div class="navbar-header">
@@ -27,52 +27,41 @@
 </ul> </div>
     </nav>
 </header>
-  <div id="main">
+  <div id="main"  ng-show="varTest<1">
 <!-- this is where content will be injected --> 
   <div id="hCont" ng-view ng-show="varTest>0"></div>
 
 <!-- formulaire -->
-<div id="smain" class="jumbotron text-center">
-  <h1>
-Learn from an account</h1>
-  <div id="hCont" ng-show="varTest<1">
-<<<<<<< HEAD
-  <form class="form-horizontal" name="form" action="dashboard.html">
-=======
-  <form class="form-horizontal" name="form" id="form">
->>>>>>> 0bc12a241bba48139dc7a82bb40ed337d5059f13
+  <div id="hCont">
+  <form class="form-horizontal" name="form">
   <div class="form-group">
-  <label class="col-md-3 control-label" for="Pseudo">Pseudo</label>
+  <label class="col-md-3 control-label" for="Pseudo">User Name</label>
   <div class="col-md-4">
-  <input type="text" class="form-control" name="pseudo" ng-model="pseudo" placeholder="pseudo" required/>
+  <input type="text" ng-minlength="4" class="form-control" name="pseudo" ng-model="pseudo" placeholder="pseudo" required/>
   </div>
-  <font color="red" ng-show="form.pseudo.$touched && form.mdp.$invalid">Le mot de passe doit contenir au moins 4 caractères</font>
+  <font color="red" ng-show="form.pseudo.$touched && form.pseudo.$invalid"> The User Name must contain at least 4 characters</font>
   </div>
   <div class="form-group">
-  <label class="col-md-3 control-label" for="mdp">mot de passe</label>
+  <label class="col-md-3 control-label" for="mdp">Password</label>
   <div class="col-md-4">
   <input type="password" class="form-control" ng-minlength="5" name="mdp" ng-model="mdp" placeholder="Mot de passe" required/>
   </div>
-  <font color="red" ng-show="form.mdp.$touched && form.mdp.$invalid"> Le mot de passe doit contenir au moins 5 caractères</font>
+  <font color="red" ng-show="form.mdp.$touched && form.mdp.$invalid"> The password must contain at least 5 characters</font>
   </div>
   <div class="form-group">
   <div class="col-md-offset-3 col-md-9">
-<<<<<<< HEAD
-  <input class="btn btn-detton-default" type="submit" value="valider"/>
-=======
-  <input class="btn btn-detton-default" type="submit" value="Sign Up" ng-click="varTest=2" id="btnS"/>
->>>>>>> 0bc12a241bba48139dc7a82bb40ed337d5059f13
+  <button class="btn btn-detton-default" style="color:#c0c0c0" ng-if="form.pseudo.$dirty && form.pseudo.$invalid || form.mdp.$dirty && form.mdp.$invalid ||form.mdp.$untouched || form.pseudo.$untouched || form.mdp.$touched && form.mdp.$invalid || form.mdp.$invalid && form.pseudo.$touched && form.pseudo.$invalid">Sign In</button>
+  <input class="btn btn-detton-default" ng-click="varTest=2" style="color:white;background-color:rgba(42,16,140,1)" ng-show="form.mdp.$touched && form.mdp.$valid && form.pseudo.$touched && form.pseudo.$valid" type="submit" value="Sign In"/>
   </div>
   </div>
   </form>
-    <h3>Rendez vous de l'apprenant</h3>
-    <h4>DClearning, votre système en adéquation avec vos études</h4>
   </div>
   </div>
-</div>
 
-  <div id="bCont" class="container" style="word-wrap:break-word;">
-      <div class="row">
+  <div ng-show="varTest>1"><div ng-include="'dashboard.html'"></div></div>
+
+  <div ng-show="varTest<1" id="bCont" class="container" style="word-wrap:break-word;">
+      <div class="row"  ng-show="varTest<1">
           <div id="mineB" class="col-sm-1">
             <div id="imgA"><img src="images/img1.jpeg"></div></br>
             <h3>Discover a new way of learning</h3>
@@ -91,7 +80,7 @@ Learn from an account</h1>
         </div>
   </div>
 </div>
-<footer>
+<footer  ng-show="varTest<1">
   <div class="container">
     <div class="row">
       <div id="fDiv" class="col-sm-1">
@@ -155,14 +144,6 @@ var app = angular.module('app', ['ngRoute']);
       $scope.message = 'There seems to be a problem finding the page you wanted';
       $scope.attemptedPath = $location.path();
   });
-   </script>
-   <script>
-      var ht=0;
-      setTimeout(function(){
-        ht=window.innerHeight;
-        document.querySelector("#smain").style.height=(ht-100)+"px";
-      }, 000000050);
-
    </script>
 </body>
 </html>
